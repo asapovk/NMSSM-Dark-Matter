@@ -1,0 +1,34 @@
+
+See http://amcatnlo.web.cern.ch/amcatnlo/list_detailed2.htm
+
+In order to script a run.
+
+You have to write a file with all the command that you type. (in that exact order).
+Note that
+   1. You can enter the answer to question as well
+   2. If you do not provide answer to question, the default value will be assumed.
+   3. Edition of the param_card/run_card can be scripted via the "set" command of the associate question.
+Finally you have to run the script as:
+./bin/mg5_aMC PATH_TO_FILE
+
+Here is an example of a script performing a scan on the top mass
+
+    generate p p > t t~ j
+    output MYDIRECTORY
+    launch MYDIRECTORY
+       set mt 170 # changing the top mass
+       set wt Auto # changing the top width
+       set ptj 40 # changing the ptj cut
+   launch
+       set mt 175 # changing the top mass
+       set wt Auto # changing the top width
+   launch
+       set mt 180 # changing the top mass
+       set wt Auto # changing the top width
+   launch MYDIRECTORY -i
+       print_results --path=./cross_section_top.txt --format=short
+Note that
+
+  1. The last two command allow you to have a multi-column file with the cross-section/error/... for each of the run
+  2. The same can be done with the ./bin/madevent and ./bin/amcatnlo executable.
+  3. Indentation in the script file is not important

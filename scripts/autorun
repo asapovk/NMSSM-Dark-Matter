@@ -1,0 +1,4 @@
+launch /home/inar/MC/MG5_aMC_v2_4_0/bin/DMjune7
+1
+launch /home/inar/MC/MG5_aMC_v2_4_0/bin/DMjune7 -i
+print_results --path=./cross_sectionDM.txt --format=short

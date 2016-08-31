@@ -1,0 +1,12 @@
+## General Options
+[Mandatory Parameters]
+Name: DMforMC
+Analyses: atlas_1502_01518
+
+[Optional Parameters]
+RandomSeed: 42
+
+[gluinos]
+XSect: 104.626 pb
+XSectErr: 0 FB
+Events: /home/inar/MC/DMtest/Events/run_01/tag_1_pythia_events.hep

@@ -1,0 +1,4 @@
+launch /home/inar/MC/DMtest
+1
+launch /home/inar/MC/DMtest -i
+print_results --path=./cross_sectionDM.txt --format=short

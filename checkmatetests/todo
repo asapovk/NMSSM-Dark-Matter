@@ -1,0 +1,26 @@
+http://checkmate.hepforge.org/validationNotes/atlas_1502_01518.pdf
+
+use simp_dm for D8
+
+perform scan
+
+write script (see file MGscript):
+generate p p > t t~ j
+    output MYDIRECTORY
+    launch MYDIRECTORY
+       set mt 170 # changing the top mass
+       set wt Auto # changing the top width
+       set ptj 40 # changing the ptj cut
+   launch
+       set mt 175 # changing the top mass
+       set wt Auto # changing the top width
+   launch
+       set mt 180 # changing the top mass
+       set wt Auto # changing the top width
+   launch MYDIRECTORY -i
+       print_results --path=./cross_section_top.txt --format=short
+
+
+try to estimate cross sections using http://pauli.uni-muenster.de/~akule_01/nllwiki/index.php/NLL-fast
+
+instead on NLO calculations at MG5
